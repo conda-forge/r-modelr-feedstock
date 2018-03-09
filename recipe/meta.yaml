@@ -1,4 +1,4 @@
-{% set version = '0.1.0' %}
+{% set version = "0.1.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/modelr_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
-  sha256: 7e8b83961ec3aee322005386e7a2b1afcd7a17959b101005b805cfd0e3d730ef
+  sha256: 25b95198d6aa23e28a0bd97dcdc78264ef168ae403928bff01e1ee81ca021ce7
 
 build:
   number: 0
