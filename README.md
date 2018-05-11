@@ -14,14 +14,16 @@ Summary: Functions for modelling that help you seamlessly integrate modelling in
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/r-modelr-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/r-modelr-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/r-modelr-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/r-modelr-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/r-modelr-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/r-modelr-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-modelr-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-modelr-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/r-modelr-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-modelr-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-modelr-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-modelr-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-modelr/badges/version.svg)](https://anaconda.org/conda-forge/r-modelr)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/r-modelr/badges/downloads.svg)](https://anaconda.org/conda-forge/r-modelr)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-r--modelr-green.svg)](https://anaconda.org/conda-forge/r-modelr) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/r-modelr.svg)](https://anaconda.org/conda-forge/r-modelr) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/r-modelr.svg)](https://anaconda.org/conda-forge/r-modelr) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/r-modelr.svg)](https://anaconda.org/conda-forge/r-modelr) |
 
 Installing r-modelr
 ===================
