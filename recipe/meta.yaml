@@ -1,5 +1,4 @@
-{% set version = "0.1.2" %}
-
+{% set version = '0.1.2' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,12 +9,13 @@ package:
 source:
   fn: modelr_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/modelr_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/modelr_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
   sha256: 6a9831c510967551a6064716dfd4db48b59dc056dcf1c7f1d2cce05ef0789027
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
   rpaths:
     - lib/R/lib/
@@ -23,38 +23,45 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-broom
     - r-dplyr
-    - r-lazyeval >=0.2.0
     - r-magrittr
     - r-purrr >=0.2.2
+    - r-rlang >=0.2.0
     - r-tibble
-    - r-tidyr >=0.6.0
-
+    - r-tidyr >=0.8.0
   run:
     - r-base
     - r-broom
     - r-dplyr
-    - r-lazyeval >=0.2.0
     - r-magrittr
     - r-purrr >=0.2.2
+    - r-rlang >=0.2.0
     - r-tibble
-    - r-tidyr >=0.6.0
+    - r-tidyr >=0.8.0
 
 test:
   commands:
-    - $R -e "library('modelr')"  # [not win]
+    - $R -e "library('modelr')"           # [not win]
     - "\"%R%\" -e \"library('modelr')\""  # [win]
 
 about:
-  home: https://github.com/hadley/modelr
+  home: https://modelr.tidyverse.org, https://github.com/hadley/modelr
   license: GPL-3
   summary: Functions for modelling that help you seamlessly integrate modelling into a pipeline
     of data manipulation and visualisation.
   license_family: GPL3
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
+  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
