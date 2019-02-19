@@ -1,4 +1,4 @@
-{% set version = '0.1.2' %}
+{% set version = "0.1.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/modelr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
-  sha256: 6a9831c510967551a6064716dfd4db48b59dc056dcf1c7f1d2cce05ef0789027
+  sha256: e536b247c17d6cacf10565dd8a1b744efc90a8815c70edd54371e413e6d1b423
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
