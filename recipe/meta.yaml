@@ -1,4 +1,4 @@
-{% set version = "0.1.3" %}
+{% set version = '0.1.4' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,16 +7,15 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: modelr_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/modelr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
-  sha256: e536b247c17d6cacf10565dd8a1b744efc90a8815c70edd54371e413e6d1b423
+  sha256: b4da77c1244bbda512ce323751c8338741eeaa195283f172a0feec2917bcfdd9
 
 build:
-  noarch: generic
   merge_build_host: True  # [win]
   number: 0
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
@@ -49,7 +48,7 @@ test:
     - "\"%R%\" -e \"library('modelr')\""  # [win]
 
 about:
-  home: https://modelr.tidyverse.org, https://github.com/hadley/modelr
+  home: https://modelr.tidyverse.org, https://github.com/tidyverse/modelr
   license: GPL-3
   summary: Functions for modelling that help you seamlessly integrate modelling into a pipeline
     of data manipulation and visualisation.
@@ -58,9 +57,25 @@ about:
 
 extra:
   recipe-maintainers:
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
+    - conda-forge/r
+
+# Package: modelr
+# Title: Modelling Functions that Work with the Pipe
+# Version: 0.1.4
+# Authors@R:  c(person(given = "Hadley", family = "Wickham", role = c("aut", "cre"), email = "hadley@rstudio.com"), person(given = "RStudio", role = "cph"))
+# Description: Functions for modelling that help you seamlessly integrate modelling into a pipeline of data manipulation and visualisation.
+# License: GPL-3
+# URL: https://modelr.tidyverse.org, https://github.com/tidyverse/modelr
+# BugReports: https://github.com/tidyverse/modelr/issues
+# Depends: R (>= 3.1)
+# Imports: broom, dplyr, magrittr, purrr (>= 0.2.2), rlang (>= 0.2.0), tibble, tidyr (>= 0.8.0)
+# Suggests: compiler, covr, ggplot2, testthat
+# Encoding: UTF-8
+# LazyData: true
+# RoxygenNote: 6.1.1
+# NeedsCompilation: no
+# Packaged: 2019-02-18 13:48:09 UTC; hadley
+# Author: Hadley Wickham [aut, cre], RStudio [cph]
+# Maintainer: Hadley Wickham <hadley@rstudio.com>
+# Repository: CRAN
+# Date/Publication: 2019-02-18 22:00:03 UTC
