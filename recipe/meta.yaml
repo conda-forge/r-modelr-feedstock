@@ -1,4 +1,4 @@
-{% set version = "0.1.6" %}
+{% set version = "0.1.7" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/modelr_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/modelr/modelr_{{ version }}.tar.gz
-  sha256: d7e5f3ddf0b3e6520ca06229471f5bcd9e371e2fecd53c03202b474c2a1955f4
+  sha256: c6fbd4257edc70875dd4e5f70499663623be9cd984aa0a4f480c3425d51896da
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -22,7 +22,7 @@ build:
 
 requirements:
   build:
-    - {{posix}}zip               # [win]
+    - {{ posix }}zip               # [win]
   host:
     - r-base
     - r-broom
@@ -50,10 +50,9 @@ test:
 about:
   home: https://modelr.tidyverse.org, https://github.com/tidyverse/modelr
   license: GPL-3
-  summary: Functions for modelling that help you seamlessly integrate modelling into a pipeline
-    of data manipulation and visualisation.
+  summary: Functions for modelling that help you seamlessly integrate modelling into a pipeline of data manipulation and visualisation.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
