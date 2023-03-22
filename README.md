@@ -1,11 +1,11 @@
-About r-modelr
-==============
+About r-modelr-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-modelr-feedstock/blob/main/LICENSE.txt)
 
 Home: https://modelr.tidyverse.org, https://github.com/tidyverse/modelr
 
 Package license: GPL-3
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-modelr-feedstock/blob/main/LICENSE.txt)
 
 Summary: Functions for modelling that help you seamlessly integrate modelling into a pipeline of data manipulation and visualisation.
 
